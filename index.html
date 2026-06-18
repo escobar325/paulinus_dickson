@@ -1,87 +1,473 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>Computer Studies Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulinus Ene Dickson | Web Developer</title>
 
-        header {
-            background-color: #002ccc90;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        h2 {
-            color: #0003cc80;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fc;
+    color:#333;
+    line-height:1.6;
+    transition:0.4s;
+}
 
-        footer {
-            background-color: #0066cc;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+header{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+nav{
+    background:#1e3a8a;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+#darkBtn{
+    display:block;
+    margin:20px auto;
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.hero-img{
+    display:block;
+    width:550px;
+    max-width:90%;
+    margin:30px auto;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+section{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    animation:fadeIn .8s ease;
+}
+
+section:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h2{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#2563eb;
+    margin:15px 0 10px;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+}
+
+.stat h3{
+    font-size:2rem;
+}
+
+.contact{
+    text-align:center;
+}
+
+form{
+    max-width:500px;
+    margin:20px auto;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+form button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.dark{
+    background:#111827;
+    color:white;
+}
+
+.dark section{
+    background:#1f2937;
+    color:white;
+}
+
+.dark .card{
+    background:#374151;
+    color:white;
+}
+
+.dark h2,
+.dark .card h3{
+    color:#60a5fa;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2rem;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+}
+</style>
+
 </head>
+
 <body>
 
 <header>
-    <h1>Computer Studies Project</h1>
-    <p>By: Paulinus Ene Dickson</p>
+    <h1>Paulinus Ene Dickson</h1>
+    <p>University of Maiduguri | Level 200 | Aspiring Web Developer</p>
 </header>
-<img src="computer.jpg" alt="Computer"
-     style="display:block; margin:20px auto; width:300px; border-radius:10px;">
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#parts">Computer Parts</a>
+    <a href="#uses">Uses</a>
+    <a href="#skills">Skills</a>
+    <a href="#stats">Statistics</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<button id="darkBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+<img src="computer.jpg" alt="Computer" class="hero-img">
+
 <main>
-    <h2>Introduction to Computers</h2>
-    <p>
-        A computer is an electronic device that accepts data,
-        processes it, stores it, and produces information.
-        Computers are used in schools, businesses, hospitals,
-        banks, and many other places.
-    </p>
 
+<section id="about">
+    <h2>About Me</h2>
+
+```
+<p>
+    My name is <strong>Paulinus Ene Dickson</strong>. I am a 200 Level student of the
+    <strong>University of Maiduguri</strong>. I am passionate about technology,
+    computer studies and web development.
+</p>
+
+<p>
+    My goal is to become a professional Web Developer and create modern websites
+    and digital solutions that help people and businesses.
+</p>
+```
+
+</section>
+
+<section id="parts">
     <h2>Parts of a Computer</h2>
-    <ul>
-        <li>Monitor</li>
-        <li>Keyboard</li>
-        <li>Mouse</li>
-        <li>Central Processing Unit (CPU)</li>
-        <li>Printer</li>
-    </ul>
 
+```
+<div class="cards">
+
+    <div class="card">
+        <img src="monitor.jpg" alt="Monitor">
+        <h3>Monitor</h3>
+        <p>Displays information visually on the screen.</p>
+    </div>
+
+    <div class="card">
+        <img src="keyboard.jpg" alt="Keyboard">
+        <h3>Keyboard</h3>
+        <p>Used for entering text and commands.</p>
+    </div>
+
+    <div class="card">
+        <img src="mouse.jpg" alt="Mouse">
+        <h3>Mouse</h3>
+        <p>Allows users to point, click and navigate.</p>
+    </div>
+
+    <div class="card">
+        <img src="cpu.jpg" alt="CPU">
+        <h3>CPU</h3>
+        <p>The brain of the computer that processes data.</p>
+    </div>
+
+    <div class="card">
+        <img src="printer.jpg" alt="Printer">
+        <h3>Printer</h3>
+        <p>Produces printed copies of documents and images.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="uses">
     <h2>Uses of Computers</h2>
-    <ul>
-        <li>Education and research</li>
-        <li>Communication</li>
-        <li>Entertainment</li>
-        <li>Business transactions</li>
-        <li>Data storage</li>
-    </ul>
 
-    <h2>Conclusion</h2>
-    <p>
-        Computers have become an important part of modern life.
-        They help people work faster, communicate easily,
-        and access information from around the world.
-    </p>
+```
+<ul>
+    <li>Education and Research</li>
+    <li>Communication and Networking</li>
+    <li>Entertainment and Gaming</li>
+    <li>Business and Banking</li>
+    <li>Data Storage and Processing</li>
+</ul>
+```
+
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+
+```
+<div class="stats">
+
+    <div class="stat">
+        <h3>HTML</h3>
+        <p>Website Structure</p>
+    </div>
+
+    <div class="stat">
+        <h3>CSS</h3>
+        <p>Website Design</p>
+    </div>
+
+    <div class="stat">
+        <h3>GitHub</h3>
+        <p>Website Hosting</p>
+    </div>
+
+    <div class="stat">
+        <h3>Learning JS</h3>
+        <p>Website Interactivity</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="stats">
+    <h2>Computer Facts & Statistics</h2>
+
+```
+<div class="stats">
+
+    <div class="stat">
+        <h3>1946</h3>
+        <p>ENIAC Introduced</p>
+    </div>
+
+    <div class="stat">
+        <h3>5B+</h3>
+        <p>Internet Users Worldwide</p>
+    </div>
+
+    <div class="stat">
+        <h3>1B+</h3>
+        <p>Personal Computers In Use</p>
+    </div>
+
+    <div class="stat">
+        <h3>24/7</h3>
+        <p>Computers Support Global Services</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="gallery">
+    <h2>Computer Gallery</h2>
+
+```
+<div class="cards">
+    <div class="card"><img src="computer.jpg" alt="Computer"></div>
+    <div class="card"><img src="monitor.jpg" alt="Monitor"></div>
+    <div class="card"><img src="keyboard.jpg" alt="Keyboard"></div>
+    <div class="card"><img src="mouse.jpg" alt="Mouse"></div>
+</div>
+```
+
+</section>
+
+<section id="contact" class="contact">
+
+```
+<h2>Contact Information</h2>
+
+<p><strong>Name:</strong> Paulinus Ene Dickson</p>
+<p><strong>University:</strong> University of Maiduguri</p>
+<p><strong>Level:</strong> 200 Level</p>
+<p><strong>Career Goal:</strong> Web Developer</p>
+
+<p>
+    <strong>Email:</strong>
+    <a href="mailto:enepaulinus75@email.com">
+        enepaulinus75@email.com
+    </a>
+</p>
+
+<p>
+    <strong>WhatsApp:</strong>
+    <a href="https://wa.me/2347019846484" target="_blank">
+        Chat with Me
+    </a>
+</p>
+
+<h3 style="margin-top:20px;">Send a Message</h3>
+
+<form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+</form>
+```
+
+</section>
+
 </main>
 
 <footer>
-    Computer Studies Project | June 2026
+    <h3>Paulinus Ene Dickson</h3>
+    <p>University of Maiduguri | Level 200</p>
+    <p>Aspiring Web Developer</p>
+    <p>© 2026 All Rights Reserved</p>
 </footer>
+
+<script>
+function toggleDarkMode(){
+    document.body.classList.toggle("dark");
+
+    let btn=document.getElementById("darkBtn");
+
+    if(document.body.classList.contains("dark")){
+        btn.innerHTML="☀️ Light Mode";
+    }else{
+        btn.innerHTML="🌙 Dark Mode";
+    }
+}
+</script>
 
 </body>
 </html>
